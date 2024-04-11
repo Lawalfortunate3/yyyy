@@ -1,0 +1,36 @@
+{% extends 'store/main.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    {% block content %}
+
+    <section id="product1" class="section-p1">
+        <h2>Feature Product</h2>
+        <p>Summer  Collection New Mordern Design.</p>
+        <div class="pro-container">
+            {% for product in products %}
+            <div class="pro">
+                <img src="{{product.imageURL}}">
+                <div class="des">
+                    <span><strong>{{product.name}}</strong></span>
+                    <h5>AVAILABLE</h5>
+
+               <section>
+                    <div id="normall" class="single-pro-details">
+                        <button data-product="{{product.id}}"  data-action="add"  class="normal , update-cart" style="background-color: #088178;">Add To Cart</button>
+                        <a href="{% url 'product_details' %}">view...</a>
+                    </div>
+               </section> 
+                      <h4>#{{product.price|floatformat:2}}</h4>
+                </div>
+               {% comment %} <a href="#"><i class="cart fa-solid fa-cart-shopping"></i></a> {% endcomment %}
+            </div>
+            {% endfor %}
+        </div> 
+
+    </section>  
+
+
+    {% endblock content %}

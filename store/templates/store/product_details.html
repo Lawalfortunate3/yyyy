@@ -1,0 +1,125 @@
+{% extends 'store/main.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+{% block content %}
+
+<div class="single">
+
+{% for product in products %}
+
+<section id="prodetalls" class="section-p1">
+    
+    <div class="single-pro-image">
+        <img src="{{product.imageURL}}" width="100%" id="mainimg" alt="">
+    
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="{{product.imageAURL}}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{{product.imageBURL}}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{{product.imageCURL}}" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="{{product.imageURL}}" width="100%" class="small-img" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="single-pro-details">
+        <h6>HOME / T-SHIRT</h6>
+        <h4>Men's Fashion T-shirt</h4>
+        <h2>$139.00</h2>
+        <select>
+            <option>Select Size</option>
+            <option>XL</option>
+            <option>XXL</option>
+            <option>Small</option>
+            <option>Large</option>
+        </select>
+        <input type="number" value="1">
+        <button class="normal">Add To Cart</button>
+        <h4>Product Details</h4>
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt omnis quam explicabo officia, cum blanditiis, ipsam aut recusandae delectus fugiat repellat culpa quos laboriosam quo dolores ratione similique, deleniti nostrum?</span>
+    </div>
+
+
+    <script>
+        var mainimg = document.getElementById ('mainimg');
+        var smallimg = document.getElementsByClassName ('small-img');
+    
+        smallimg[0].onclick = function() {
+            mainimg.src = smallimg[0].src;
+        }
+            smallimg[1].onclick = function() {
+            mainimg.src = smallimg[1].src;
+        }
+            smallimg[2].onclick = function() {
+            mainimg.src = smallimg[2].src;
+        }
+            smallimg[3].onclick = function() {
+            mainimg.src = smallimg[3].src;
+        } 
+    </script>
+    
+    
+    
+        <script src="cart.js"></script>
+
+
+    </section>
+    {% endfor %}
+</div>
+
+<script>
+    var mainimg = document.getElementById ('mainimg');
+    var smallimg = document.getElementsByClassName ('small-img');
+
+    smallimg[0].onclick = function() {
+        mainimg.src = smallimg[0].src;
+    }
+        smallimg[1].onclick = function() {
+        mainimg.src = smallimg[1].src;
+    }
+        smallimg[2].onclick = function() {
+        mainimg.src = smallimg[2].src;
+    }
+        smallimg[3].onclick = function() {
+        mainimg.src = smallimg[3].src;
+    } 
+</script>
+
+
+
+    {% comment %} <script src="script.js"></script> {% endcomment %}
+
+<script src="cart.js"></script>
+    {% endblock content %}
+
+
+    <script>
+        var mainimg = document.getElementById ('mainimg');
+        var smallimg = document.getElementsByClassName ('small-img');
+    
+        smallimg[0].onclick = function() {
+            mainimg.src = smallimg[0].src;
+        }
+            smallimg[1].onclick = function() {
+            mainimg.src = smallimg[1].src;
+        }
+            smallimg[2].onclick = function() {
+            mainimg.src = smallimg[2].src;
+        }
+            smallimg[3].onclick = function() {
+            mainimg.src = smallimg[3].src;
+        } 
+    </script>
+    
+    
+    
+        <script src="cart.js"></script>
